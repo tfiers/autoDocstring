@@ -8,7 +8,7 @@ export class TomasFactory extends BaseFactory {
         if (this._includeName) {
             this._snippet.appendText(`${docstring.name} `);
         }
-        this._snippet.appendPlaceholder("[summary]");
+        this._snippet.appendPlaceholder("[Summary]");
         this.appendNewLine();
     }
 
@@ -19,10 +19,10 @@ export class TomasFactory extends BaseFactory {
     formatArguments(docstring: interfaces.DocstringParts) {
         if (docstring.args.length > 0 || docstring.kwargs.length > 0) {
             this.appendText("\nArguments:\n\t");
-            this.appendPlaceholder("[argument]")
-            this.appendText(": ");
-            this.appendPlaceholder("[description]");     
-            this.appendNewLine();       
+            this.appendPlaceholder("[argument_name]")
+            this.appendText(" -- ");
+            this.appendPlaceholder("[Description]");
+            this.appendNewLine();
         }
     }
 
